@@ -1,6 +1,5 @@
 import random
 
-from regex import R
 
 opts = ["R", "P", "S"]
 
