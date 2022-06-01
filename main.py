@@ -1,5 +1,7 @@
 import random
 
+from regex import R
+
 opts = ["R", "P", "S"]
 
 def play(opts):
@@ -21,17 +23,21 @@ def play(opts):
 
     return player, cpu
 
-
-player, cpu = play(opts)
-
-while player == cpu:
-    print("It's a tie!")
+def run():
     player, cpu = play(opts)
 
-if (player == "R" and cpu == "S") or (
-    player == "P" and cpu == "R") or (
-    player == "S" and cpu == "P"):
-    print("Player Wins!")
+    while player == cpu:
+        print("It's a tie!")
+        player, cpu = play(opts)
 
-else:
-    print("CPU Wins!")
+    if (player == "R" and cpu == "S") or (
+        player == "P" and cpu == "R") or (
+        player == "S" and cpu == "P"):
+        print("Player Wins!")
+
+    else:
+        print("CPU Wins!")
+
+    return None
+
+run()
